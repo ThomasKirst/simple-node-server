@@ -6,7 +6,11 @@ const app = express();
 import customersRoutes from './routes/customers.routes.js';
 import productsRoutes from './routes/products.routes.js';
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.get('/', (request, response) => {
+  response.json({ status: 'Server is up and running.' });
+});
 
 app.use(productsRoutes);
 app.use(customersRoutes);
