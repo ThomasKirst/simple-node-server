@@ -1,4 +1,26 @@
 {
-  "products": [],
+  "products": [
+    {
+      "name": "Butter Beer",
+      "category": "🍺",
+      "price": 3,
+      "onSale": true,
+      "id": "f9ff59ce-97c2-4d1e-aa7f-f5c20f9fd3c4"
+    },
+    {
+      "name": "Nimbus 2021",
+      "category": "🧹",
+      "price": 2021,
+      "onSale": true,
+      "id": "fe5989f7-7525-4d56-ad42-cf3e6bff3641"
+    },
+    {
+      "name": "Nimbus 2022",
+      "category": "🧹",
+      "price": 2022,
+      "onSale": false,
+      "id": "057d7ed5-2c9a-47be-ad35-4ba1d037fb1f"
+    }
+  ],
   "customers": []
 }
