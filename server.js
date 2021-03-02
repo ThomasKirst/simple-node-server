@@ -1,9 +1,10 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+import express from 'express';
+import bodyParser from 'body-parser';
+
 const app = express();
 
-const customersRoutes = require('./routes/customers.routes');
-const productsRoutes = require('./routes/products.routes');
+import customersRoutes from './routes/customers.routes.js';
+import productsRoutes from './routes/products.routes.js';
 
 app.use(bodyParser.urlencoded({ extended: false }));
 

@@ -21,5 +21,4 @@ function postCustomer(request, response) {
   `);
 }
 
-exports.customerForm = customerForm;
-exports.postCustomer = postCustomer;
+export { customerForm, postCustomer };

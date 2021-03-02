@@ -11,6 +11,4 @@ function productForm(request, response) {
       </form>
   `);
 }
-
-exports.postProduct = postProduct;
-exports.productForm = productForm;
+export { postProduct, productForm };

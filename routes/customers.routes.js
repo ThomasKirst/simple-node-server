@@ -1,9 +1,12 @@
-const express = require('express');
-const customersController = require('../controller/customers.controller');
+import express from 'express';
+import {
+  customerForm,
+  postCustomer,
+} from '../controller/customers.controller.js';
 
 const router = express.Router();
 
-router.get('/customers', customersController.customerForm);
-router.post('/customers', customersController.postCustomer);
+router.get('/customers', customerForm);
+router.post('/customers', postCustomer);
 
-module.exports = router;
+export default router;
