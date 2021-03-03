@@ -4,7 +4,7 @@ import fs from 'fs';
 function postProduct(request, response) {
   const newProduct = { ...request.body, id: uuidv4() };
 
-  const db = fs.readFile('db.json', (error, fileContents) => {
+  fs.readFile('db.json', (error, fileContents) => {
     if (error) {
       console.error(error.message);
       return response.json({ error: error.message });
