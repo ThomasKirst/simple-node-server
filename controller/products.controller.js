@@ -7,6 +7,7 @@ function postProduct(request, response) {
   const db = fs.readFile('db.json', (error, fileContents) => {
     if (error) {
       console.error(error.message);
+      return response.json({ error: error.message });
     }
     const database = JSON.parse(fileContents);
     const products = database.products;
