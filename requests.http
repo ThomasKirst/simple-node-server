@@ -1,0 +1,9 @@
+POST http://localhost:4040/products
+content-type: application/json
+
+{
+  "name": "Nimbus 202222222",
+  "category": "🧹",
+  "price": 2024,
+  "onSale": false
+}

@@ -15,4 +15,4 @@ app.get('/', (request, response) => {
 app.use(productsRoutes);
 app.use(customersRoutes);
 
-app.listen(4000, () => console.log('Server is started'));
+app.listen(4040, () => console.log('Server is started'));

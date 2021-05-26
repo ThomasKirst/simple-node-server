@@ -1,26 +1,36 @@
 import { v4 as uuidv4 } from 'uuid';
 import { loadFromDb, saveToDb } from '../lib/databaseHelpers.js';
 
-function postProduct(request, response) {
+async function postProduct(request, response) {
   const newProduct = { ...request.body, id: uuidv4() };
 
-  const database = loadFromDb();
+  const database = await loadFromDb();
   const products = database.products;
   products.push(newProduct);
 
-  saveToDb(database);
-
-  response.json(newProduct);
+  try {
+    const result = await saveToDb(database);
+    if (result) {
+      response.json(newProduct);
+    } else {
+      response.json({
+        success: false,
+        message: 'Database could not be written.',
+      });
+    }
+  } catch (error) {
+    response.json({ success: false, message: error.message });
+  }
 }
 
-function listProducts(request, response) {
-  const database = loadFromDb();
+async function listProducts(request, response) {
+  const database = await loadFromDb();
   response.json({ products: database.products });
 }
 
-function findProduct(request, response) {
+async function findProduct(request, response) {
   const { productId } = request.params;
-  const database = loadFromDb();
+  const database = await loadFromDb();
   const productToReturn = database.products.find(
     (product) => product.id === productId
   );
